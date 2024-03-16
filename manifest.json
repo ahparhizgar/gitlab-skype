@@ -1,37 +1,49 @@
 {
-    "name": "My YT Bookmarks",
-    "version": "0.1.0",
-    "description": "Saving timestamps in YT videos",
-    "permissions": ["storage", "tabs"],
-    "host_permissions": ["https://*.youtube.com/*"],
-    "background": {
-      "service_worker": "background.js"
+  "name": "Gitlab mention copy",
+  "version": "1.0",
+  "description": "Saves time to write mention messages.",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://gitlab.com/*",
+    "https://gitlab.snpb.app/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gitlab.com/*",
+        "https://gitlab.snpb.app/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/mark_chat_read.svg",
+        "assets/source_notes.svg"
+      ],
+      "matches": [
+        "https://gitlab.com/*",
+        "https://gitlab.snpb.app/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "32": "assets/ext-icon.png"
     },
-    "content_scripts": [
-      {
-        "matches": ["https://*.youtube.com/*"],
-        "js": ["contentScript.js"]
-      }
-    ],
-    "web_accessible_resources": [
-      {
-        "resources": [
-          "assets/bookmark.png",
-          "assets/play.png",
-          "assets/delete.png",
-          "assets/save.png"
-        ],
-        "matches": ["https://*.youtube.com/*"]
-      }
-    ],
-    "action": {
-      "default_icon": {
-        "16": "assets/ext-icon.png",
-        "24": "assets/ext-icon.png",
-        "32": "assets/ext-icon.png"
-      },
-      "default_title": "My YT Bookmarks",
-      "default_popup": "popup.html"
-    },
-    "manifest_version": 3
+    "default_title": "Gitlab mention copy",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "assets/ext-icon.png"
+  },
+  "manifest_version": 3
 }
