@@ -1,7 +1,7 @@
 # Gitlab Mention Copy: A Chrome Extension
 ## This Chrome extension adds buttons to the GitLab page for quick copying of these texts:
-- Please review [My MR Title](https://gitlab.com/myaccount/myproject/-/merge_requests/xxx)
-- Please check  [My MR Title](https://gitlab.com/myaccount/myproject/-/merge_requests/xxx)
+- `Please review [My MR Title](https://gitlab.com/myaccount/myproject/-/merge_requests/xxx)`
+- `Please check  [My MR Title](https://gitlab.com/myaccount/myproject/-/merge_requests/xxx)`
 ### How to use it:
 1. open chrome extensions page: `chrome://extensions/`
 2. turn on developer mode (top of the page)
