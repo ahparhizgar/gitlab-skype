@@ -7,3 +7,4 @@
 2. turn on developer mode (top of the page)
 3. clone this repo (or download it as a zip then extract it)
 4. press load unpack and select the source code folder
+5. click on buttons or use `r` and `p` keys to copy texts
