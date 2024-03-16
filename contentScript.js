@@ -54,10 +54,10 @@ function onPageLoaded() {
 }
 onPageLoaded()
 window.addEventListener('load', function () {
+    onPageLoaded()
     const shortcutElements = document.querySelectorAll('.my-shortcut');
     shortcutElements.forEach(element => {
         const shortcuts = element.getAttribute('aria-keyshortcuts');
-        console.log(shortcuts)
         document.addEventListener('keydown', function(event) {
             if (shortcuts && shortcuts.includes(event.key)) {
                 element.click();
@@ -65,4 +65,3 @@ window.addEventListener('load', function () {
         });
     });
 });
-//document.addEventListener('DOMContentLoaded', onPageLoaded);
