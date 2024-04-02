@@ -59,13 +59,18 @@ window.addEventListener('load', async function () {
     shortcutElements.forEach(element => {
         const shortcuts = element.getAttribute('aria-keyshortcuts');
         document.addEventListener('keydown', function (event) {
-            if (!hasModifierKeys(event) && shortcuts.includes(event.key)) {
-                if (isElementInViewport(element) && !isInInvisibleParent(element))
-                    element.click();
-            }
+            if (hasModifierKeys(event))
+                return;
+            if (["input", "textarea"].includes(event.target.tagName.toLowerCase()))
+                return;
+            if (!shortcuts.includes(event.key))
+                return;
+            if (isElementInViewport(element) && !isInInvisibleParent(element))
+                element.click();
         });
     });
-});
+})
+;
 
 function hasModifierKeys(event) {
     return event.ctrlKey || event.altKey || event.shiftKey;
