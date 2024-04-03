@@ -73,7 +73,7 @@ window.addEventListener('load', async function () {
 ;
 
 function hasModifierKeys(event) {
-    return event.ctrlKey || event.altKey || event.shiftKey;
+    return event.ctrlKey || event.metaKey || event.altKey || event.shiftKey;
 }
 
 function isElementInViewport(element) {
